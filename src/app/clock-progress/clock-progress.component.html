@@ -1,0 +1,38 @@
+<div class="clock-progress">
+    <h1>{{ timeNumeric }}</h1>
+    <p>{{ progress }}% del día</p>
+  
+    <div class="time-adjustment">
+      <div class="slider">
+        <label>Horas</label>
+        <input
+          type="range"
+          min="0"
+          max="23"
+          [(ngModel)]="customHour"
+          (change)="adjustHour(customHour)"
+        />
+      </div>
+      <div class="slider">
+        <label>Minutos</label>
+        <input
+          type="range"
+          min="0"
+          max="59"
+          [(ngModel)]="customMinute"
+          (change)="adjustMinute(customMinute)"
+        />
+      </div>
+      <div class="slider">
+        <label>Segundos</label>
+        <input
+          type="range"
+          min="0"
+          max="59"
+          [(ngModel)]="customSecond"
+          (change)="adjustSecond(customSecond)"
+        />
+      </div>
+    </div>
+  </div>
+  
