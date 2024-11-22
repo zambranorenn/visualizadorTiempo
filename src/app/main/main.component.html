@@ -1,0 +1,25 @@
+<div class="main-layout">
+  <div class="menu-container">
+    <h1>Menú</h1>
+    <p>Selecciona una forma de visualizar el tiempo:</p>
+    <select (change)="onVisualizationChange($event)" class="visualization-dropdown">
+      <option *ngFor="let visualization of visualizations" [value]="visualization.value">
+        {{ visualization.label }}
+      </option>
+    </select>
+    <button class="logout-button" (click)="logout()">Cerrar Sesión</button>
+  </div>
+
+  <div class="display-container">
+    <app-clock-digital *ngIf="selectedVisualization === 'digital'"></app-clock-digital>
+    <app-clock-words *ngIf="selectedVisualization === 'words'"></app-clock-words>
+    <app-clock-morse *ngIf="selectedVisualization === 'morse'"></app-clock-morse>
+    <app-clock-progress *ngIf="selectedVisualization === 'progress'"></app-clock-progress>
+    <app-clock-load *ngIf="selectedVisualization === 'load'"></app-clock-load>
+    <app-clock-load-circle *ngIf="selectedVisualization === 'load-circle'"></app-clock-load-circle>
+    <app-clock-binary *ngIf="selectedVisualization === 'binary'"></app-clock-binary>
+    <app-clock-roman *ngIf="selectedVisualization === 'romane'"></app-clock-roman>
+    <app-clock-water *ngIf="selectedVisualization === 'water'"></app-clock-water>
+    <app-clock-hex *ngIf="selectedVisualization === 'hex'"></app-clock-hex>
+  </div>
+</div>

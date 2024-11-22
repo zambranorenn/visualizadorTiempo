@@ -1,0 +1,15 @@
+<div class="auth-container">
+    <h2>Login</h2>
+    <form (ngSubmit)="onLogin()" class="auth-form">
+      <label for="username">Username:</label>
+      <input id="username" [(ngModel)]="username" name="username" required maxlength="16" />
+  
+      <label for="password">Password:</label>
+      <input id="password" type="password" [(ngModel)]="password" name="password" required minlength="8" maxlength="16" />
+  
+      <button type="submit">Login</button>
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+      <p>Don't have an account? <a href="/registro">Register</a></p>
+    </form>
+  </div>
+  
