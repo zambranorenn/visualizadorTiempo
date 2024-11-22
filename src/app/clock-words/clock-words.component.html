@@ -1,0 +1,43 @@
+<div class="clock-words">
+    <h1>{{ timeInWords }}</h1>
+  
+    <div class="time-adjustment">
+      <div class="slider">
+        <label>Horas</label>
+        <input
+          type="range"
+          min="1"
+          max="12"
+          [(ngModel)]="customHour"
+          (input)="adjustHour(customHour)"
+        />
+      </div>
+      <div class="slider">
+        <label>Minutos</label>
+        <input
+          type="range"
+          min="0"
+          max="59"
+          [(ngModel)]="customMinute"
+          (input)="adjustMinute(customMinute)"
+        />
+      </div>
+      <div class="slider">
+        <label>Segundos</label>
+        <input
+          type="range"
+          min="0"
+          max="59"
+          [(ngModel)]="customSecond"
+          (input)="adjustSecond(customSecond)"
+        />
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" [(ngModel)]="isPM" (change)="toggleAMPM()" />
+          PM
+        </label>
+      </div>
+    </div>
+  </div>
+  

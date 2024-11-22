@@ -1,0 +1,38 @@
+/* src/app/clock-digital/clock-digital.component.css */
+.digital-clock {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .digital-clock h1 {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+  }
+  
+  .time-adjustment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .slider {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .slider label {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  input[type='range'] {
+    width: 200px;
+  }
+  
+  input[type='checkbox'] {
+    margin-left: 8px;
+  }
+  

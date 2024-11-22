@@ -1,0 +1,34 @@
+.clock-words {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .clock-words h1 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+    text-transform: capitalize;
+  }
+  
+  .time-adjustment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .slider {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .slider label {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  input[type='range'] {
+    width: 200px;
+  }
+  
