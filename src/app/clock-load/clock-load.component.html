@@ -1,0 +1,54 @@
+<div class="blocks-container">
+    <!-- Visualización del reloj -->
+    <h2>
+      {{ currentHour }}:{{ currentMinute | number: '2.0-0' }}:{{ currentSecond | number: '2.0-0' }}
+      {{ isPM ? 'PM' : 'AM' }}
+    </h2>
+  
+    <!-- Bloques de horas -->
+    <div class="row">
+      <div *ngFor="let block of filledHours" class="block" [class.filled]="block === 1"></div>
+    </div>
+    <div class="label">Horas</div>
+  
+    <!-- Bloques de minutos -->
+    <div class="row">
+      <div *ngFor="let block of filledMinutes" class="block" [class.filled]="block === 1"></div>
+    </div>
+    <div class="label">Minutos</div>
+  
+    <!-- Bloques de segundos -->
+    <div class="row">
+      <div *ngFor="let block of filledSeconds" class="block" [class.filled]="block === 1"></div>
+    </div>
+    <div class="label">Segundos</div>
+  
+    <div class="sliders">
+        <label>Horas</label>
+        <input
+          type="range"
+          min="1"
+          max="12"
+          [value]="currentHour"
+          (input)="adjustHour($event)"
+        />
+      
+        <label>Minutos</label>
+        <input
+          type="range"
+          min="0"
+          max="59"
+          [value]="currentMinute"
+          (input)="adjustMinute($event)"
+        />
+      
+        <label>Segundos</label>
+        <input
+          type="range"
+          min="0"
+          max="59"
+          [value]="currentSecond"
+          (input)="adjustSecond($event)"
+        />
+      </div>
+      

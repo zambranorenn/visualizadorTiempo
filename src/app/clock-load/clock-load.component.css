@@ -1,0 +1,53 @@
+/* Contenedor general */
+.blocks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; /* Reducir el espacio entre filas */
+  }
+  
+  /* Filas */
+  .row {
+    display: flex;
+    gap: 0.1rem; /* Reducir el espacio entre bloques */
+  }
+  
+  /* Bloques */
+  .block {
+    width: 10px; /* Reducir ancho */
+    height: 10px; /* Reducir alto */
+    border: 1px solid #ccc;
+    border-radius: 2px; /* Ajustar bordes */
+    background-color: #e0e0e0; /* Color de los bloques vacíos */
+  }
+  
+  .block.filled {
+    background-color: #007bff; /* Azul para los bloques llenos */
+    border-color: #0056b3; /* Borde más oscuro */
+  }
+  
+  /* Etiquetas */
+  .label {
+    font-size: 0.8rem; /* Reducir tamaño de fuente */
+    font-weight: bold;
+    margin-top: 0.2rem;
+    text-align: center;
+  }
+  
+  /* Sliders */
+  .sliders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem; /* Ajustar espacio entre sliders */
+  }
+  
+  .sliders label {
+    font-size: 0.8rem; /* Reducir tamaño de fuente */
+    font-weight: bold;
+  }
+  
+  .sliders input[type='range'] {
+    width: 150px; /* Reducir ancho */
+  }
+  

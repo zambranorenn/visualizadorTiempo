@@ -1,0 +1,49 @@
+<div class="blocks-container">
+    <!-- Visualización del reloj -->
+    <h2>
+      {{ currentHour | number: '2.0-0' }}:{{ currentMinute | number: '2.0-0' }}:{{ currentSecond | number: '2.0-0' }}
+      {{ isPM ? 'PM' : 'AM' }}
+    </h2>
+  
+    <canvas #clockCanvas width="300" height="300"></canvas>
+  
+    <div class="sliders-container">
+      <!-- Contenedor superior con sliders de horas y minutos -->
+      <div class="top-sliders">
+        <div class="slider-item">
+          <label>Horas</label>
+          <input
+            type="range"
+            min="1"
+            max="12"
+            [value]="currentHour"
+            (input)="adjustHour($event)"
+          />
+        </div>
+        <div class="slider-item">
+          <label>Minutos</label>
+          <input
+            type="range"
+            min="0"
+            max="59"
+            [value]="currentMinute"
+            (input)="adjustMinute($event)"
+          />
+        </div>
+      </div>
+    
+      <!-- Slider de segundos centrado -->
+      <div class="bottom-slider">
+        <label>Segundos</label>
+        <input
+          type="range"
+          min="0"
+          max="59"
+          [value]="currentSecond"
+          (input)="adjustSecond($event)"
+        />
+      </div>
+    </div>
+    
+  </div>
+  

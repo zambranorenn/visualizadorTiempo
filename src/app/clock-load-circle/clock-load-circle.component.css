@@ -1,0 +1,59 @@
+.blocks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Contenedor general de los sliders */
+.sliders-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Espaciado entre las filas */
+    margin-top: 1rem; /* Espaciado desde el reloj */
+  }
+  
+  /* Contenedor para los sliders de horas y minutos */
+  .top-sliders {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Espaciado entre los sliders */
+  }
+  
+  /* Estilo para cada slider */
+  .slider-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Slider individual */
+  .slider-item input[type="range"] {
+    width: 150px; /* Ajusta el ancho del slider */
+    margin-top: 0.5rem;
+  }
+  
+  /* Slider de segundos */
+  .bottom-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Ajusta el slider de segundos */
+  .bottom-slider input[type="range"] {
+    width: 300px; /* Más ancho para centrarlo visualmente */
+    margin-top: 0.5rem;
+  }
+  
+
+label {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+input[type='range'] {
+  width: 200px;
+}
+
