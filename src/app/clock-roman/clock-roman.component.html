@@ -1,0 +1,38 @@
+<div class="clock-container">
+  <!-- Hora en formato romano -->
+  <h2>{{ romanHour }}:{{ romanMinute }}:{{ romanSecond }}</h2>
+
+  <!-- Sliders para ajustar horas, minutos y segundos -->
+  <div class="sliders">
+    <div class="slider-group">
+      <label>Horas</label>
+      <input
+        type="range"
+        min="1"
+        max="12"
+        [value]="currentHour > 12 ? currentHour - 12 : currentHour || 12"
+        (input)="adjustHour($event)"
+      />
+    </div>
+    <div class="slider-group">
+      <label>Minutos</label>
+      <input
+        type="range"
+        min="0"
+        max="59"
+        [value]="currentMinute"
+        (input)="adjustMinute($event)"
+      />
+    </div>
+    <div class="slider-group">
+      <label>Segundos</label>
+      <input
+        type="range"
+        min="0"
+        max="59"
+        [value]="currentSecond"
+        (input)="adjustSecond($event)"
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="binary-container">
+    <h2>{{ currentHour | number: '2.0-0' }}:{{ currentMinute | number: '2.0-0' }}:{{ currentSecond | number: '2.0-0' }}</h2>
+  
+    <div class="binary-row">
+      <div class="binary-label">Horas</div>
+      <div class="binary-numbers">
+        <span *ngFor="let bit of binaryHours" class="bit" [class.filled]="bit === '1'">{{ bit }}</span>
+      </div>
+      <div class="binary-value">{{ currentHour }}</div>
+    </div>
+  
+    <div class="binary-row">
+      <div class="binary-label">Minutos</div>
+      <div class="binary-numbers">
+        <span *ngFor="let bit of binaryMinutes" class="bit" [class.filled]="bit === '1'">{{ bit }}</span>
+      </div>
+      <div class="binary-value">{{ currentMinute }}</div>
+    </div>
+  
+    <div class="binary-row">
+      <div class="binary-label">Segundos</div>
+      <div class="binary-numbers">
+        <span *ngFor="let bit of binarySeconds" class="bit" [class.filled]="bit === '1'">{{ bit }}</span>
+      </div>
+      <div class="binary-value">{{ currentSecond }}</div>
+    </div>
+  </div>
+  
+  <div class="sliders">
+    <label>Horas</label>
+    <input
+      type="range"
+      min="0"
+      max="23"
+      [value]="currentHour"
+      (input)="adjustHour($event)"
+    />
+    <label>Minutos</label>
+    <input
+      type="range"
+      min="0"
+      max="59"
+      [value]="currentMinute"
+      (input)="adjustMinute($event)"
+    />
+    <label>Segundos</label>
+    <input
+      type="range"
+      min="0"
+      max="59"
+      [value]="currentSecond"
+      (input)="adjustSecond($event)"
+    />
+  </div>
+  

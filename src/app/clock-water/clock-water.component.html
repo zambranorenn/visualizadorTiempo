@@ -1,0 +1,59 @@
+<div class="clock-water-container">
+    <div class="jar-container">
+      <div class="jar">
+        <div
+          class="drops"
+          [style.height]="hourPercentage + '%'"
+          [style.background]="getFillColor(hourPercentage)"
+        ></div>
+        <p>{{ currentHour }}</p>
+      </div>
+      <div class="jar">
+        <div
+          class="drops"
+          [style.height]="minutePercentage + '%'"
+          [style.background]="getFillColor(minutePercentage)"
+        ></div>
+        <p>{{ currentMinute }}</p>
+      </div>
+      <div class="jar">
+        <div
+          class="drops"
+          [style.height]="secondPercentage + '%'"
+          [style.background]="getFillColor(secondPercentage)"
+        ></div>
+        <p>{{ currentSecond }}</p>
+      </div>
+    </div>
+  
+    <!-- Sliders para ajustar el tiempo -->
+    <div class="sliders">
+      <label>Horas</label>
+      <input
+        type="range"
+        min="0"
+        max="23"
+        [value]="currentHour"
+        (input)="adjustHour($event)"
+      />
+  
+      <label>Minutos</label>
+      <input
+        type="range"
+        min="0"
+        max="59"
+        [value]="currentMinute"
+        (input)="adjustMinute($event)"
+      />
+  
+      <label>Segundos</label>
+      <input
+        type="range"
+        min="0"
+        max="59"
+        [value]="currentSecond"
+        (input)="adjustSecond($event)"
+      />
+    </div>
+  </div>
+  
