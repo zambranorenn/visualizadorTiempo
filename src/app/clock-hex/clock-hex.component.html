@@ -1,0 +1,35 @@
+<div class="hex-container">
+    <!-- Display Hexadecimal Time -->
+    <h2>{{ hexHour }}:{{ hexMinute }}:{{ hexSecond }}</h2>
+  
+    <!-- Sliders for Manual Adjustment -->
+    <div class="sliders">
+      <label>Horas</label>
+      <input
+        type="range"
+        min="0"
+        max="23"
+        [value]="currentHour"
+        (input)="adjustHour($event)"
+      />
+  
+      <label>Minutos</label>
+      <input
+        type="range"
+        min="0"
+        max="59"
+        [value]="currentMinute"
+        (input)="adjustMinute($event)"
+      />
+  
+      <label>Segundos</label>
+      <input
+        type="range"
+        min="0"
+        max="59"
+        [value]="currentSecond"
+        (input)="adjustSecond($event)"
+      />
+    </div>
+  </div>
+  
